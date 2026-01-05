@@ -1,0 +1,5 @@
+{
+  "rules": [
+    { "type": "field", "domain": ["geosite:geolocation-!cn"], "outboundTag": "proxy" }
+  ]
+}

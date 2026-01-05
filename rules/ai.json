@@ -1,0 +1,5 @@
+{
+  "rules": [
+    { "type": "field", "domain": ["geosite:openai", "geosite:anthropic", "geosite:google-llm"], "outboundTag": "ai" }
+  ]
+}

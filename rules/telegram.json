@@ -1,0 +1,6 @@
+{
+  "rules": [
+    { "type": "field", "domain": ["geosite:telegram"], "outboundTag": "telegram" },
+    { "type": "field", "ip": ["geoip:telegram"], "outboundTag": "telegram" }
+  ]
+}

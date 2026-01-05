@@ -1,0 +1,6 @@
+{
+  "rules": [
+    { "type": "field", "domain": ["geosite:steam", "geosite:epicgames", "geosite:battlenet", "geosite:riot"], "outboundTag": "direct" },
+    { "type": "field", "ip": ["geoip:steam", "geoip:epicgames", "geoip:battlenet", "geoip:riot"], "outboundTag": "direct" }
+  ]
+}

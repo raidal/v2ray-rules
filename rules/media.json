@@ -1,0 +1,5 @@
+{
+  "rules": [
+    { "type": "field", "domain": ["geosite:netflix", "geosite:disney", "geosite:youtube", "geosite:bilibili"], "outboundTag": "media" }
+  ]
+}

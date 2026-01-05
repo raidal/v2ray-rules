@@ -1,0 +1,5 @@
+{
+  "rules": [
+    { "type": "field", "ip": ["geoip:hk", "geoip:sg", "geoip:jp"], "outboundTag": "proxy" }
+  ]
+}

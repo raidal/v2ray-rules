@@ -1,0 +1,97 @@
+{
+  "domainStrategy": "IPIfNonMatch",
+  "rules": [
+    {
+      "type": "field",
+      "domain": [
+        "geosite:cn",
+        "geosite:private"
+      ],
+      "outboundTag": "direct"
+    },
+    {
+      "type": "field",
+      "ip": [
+        "geoip:cn",
+        "geoip:private"
+      ],
+      "outboundTag": "direct"
+    },
+    {
+      "type": "field",
+      "domain": [
+        "geosite:geolocation-!cn"
+      ],
+      "outboundTag": "proxy"
+    },
+    {
+      "type": "field",
+      "domain": [
+        "geosite:steam",
+        "geosite:epicgames",
+        "geosite:battlenet",
+        "geosite:riot"
+      ],
+      "outboundTag": "direct"
+    },
+    {
+      "type": "field",
+      "ip": [
+        "geoip:steam",
+        "geoip:epicgames",
+        "geoip:battlenet",
+        "geoip:riot"
+      ],
+      "outboundTag": "direct"
+    },
+    {
+      "type": "field",
+      "domain": [
+        "geosite:netflix",
+        "geosite:disney",
+        "geosite:youtube",
+        "geosite:bilibili"
+      ],
+      "outboundTag": "media"
+    },
+    {
+      "type": "field",
+      "domain": [
+        "geosite:openai",
+        "geosite:anthropic",
+        "geosite:google-llm"
+      ],
+      "outboundTag": "ai"
+    },
+    {
+      "type": "field",
+      "domain": [
+        "geosite:telegram"
+      ],
+      "outboundTag": "telegram"
+    },
+    {
+      "type": "field",
+      "ip": [
+        "geoip:telegram"
+      ],
+      "outboundTag": "telegram"
+    },
+    {
+      "type": "field",
+      "domain": [
+        "geosite:cdn-cn"
+      ],
+      "outboundTag": "direct"
+    },
+    {
+      "type": "field",
+      "ip": [
+        "geoip:hk",
+        "geoip:sg",
+        "geoip:jp"
+      ],
+      "outboundTag": "proxy"
+    }
+  ]
+}
