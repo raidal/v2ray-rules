@@ -1,5 +1,8 @@
 name: Update Rules
 
+permissions:
+  contents: write
+
 on:
   schedule:
     - cron: "0 */12 * * *"
@@ -10,21 +13,28 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0   # ← 关键修复点
 
-      - name: Install Python
+      - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: "3.x"
 
+      - name: Install wget
+        run: sudo apt-get install -y wget
+
       - name: Update geosite & geoip
         run: bash scripts/update.sh
 
-      - name: Commit changes
+      - name: Commit and push changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add .
-          git commit -m "Auto update rules" || echo "No changes"
+          git commit -m "Auto update rules" || echo "No changes to commit"
+          git pull --rebase   # ← 关键修复点：避免冲突
           git push
